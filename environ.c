@@ -2,8 +2,7 @@
 
 /**
  * _myenv - prints the current environment
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
+ * @info: Structure containing potential arguments.
  * Return: Always 0
  */
 int _myenv(info_t *info)
@@ -55,8 +54,7 @@ int _mysetenv(info_t *info)
 
 /**
  * _myunsetenv - Remove an environment variable
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
+ * @info: Structure containing potential arguments
  *  Return: Always 0
  */
 int _myunsetenv(info_t *info)
@@ -69,15 +67,15 @@ int _myunsetenv(info_t *info)
 		return (1);
 	}
 	for (index = 1; index <= info->argc; index++)
+	{
 		_unsetenv(info, info->argv[i]);
-
+	}
 	return (0);
 }
 
 /**
  * populate_env_list - populates env linked list
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
+ * @info: Structure containing potential arguments. Used to maintai
  * Return: Always 0
  */
 int populate_env_list(info_t *info)
@@ -86,7 +84,9 @@ int populate_env_list(info_t *info)
 	size_t i;
 
 	for (i = 0; environ[i]; i++)
+	{
 		add_node_end(&node, environ[i], 0);
+	}
 	info->env = node;
 	return (0);
 }
