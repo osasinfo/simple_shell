@@ -42,8 +42,6 @@ void shell_execute(char **, int);
 int check_command(char *);
 void execute(char **, int);
 
-
-
 /* shell helper function */
 int print(char *, int);
 void (*get_func(char *))(char **);
@@ -52,10 +50,8 @@ void (*get_func(char *))(char **);
 int _strlen(char *);
 int _strcmp(char*, char *);
 
-
 /* shell memory management */
 void *_realloc(void *, int, int);
-
 
 /* environment path */
 char *_getenv(char *);
